@@ -9,6 +9,7 @@ pip install virtualenv
 ```
 
 Activate the virtual environnement
+
 Linux/OS X
 ```
 venv/bin/activate
@@ -51,7 +52,9 @@ pip install email-validator
 
 ### Versions
 Python 3.10.0
+
 Flask 2.0.2
+
 Werkzeug 2.0.2
 
 ## Init database
