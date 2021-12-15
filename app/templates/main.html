@@ -5,24 +5,28 @@
         <title>First Flask Dashboard</title>
         <meta name="description" content="My first dashboard using Flask">
         <meta name="author" content="Thibault Hareau">
-        <link rel="stylesheet" href="../static/main.css">
+        <link rel="stylesheet" href="../static/css/main.css">
     </head>
     <body>
         <header>
-            <h1>Flask Dashboard</h1>
+            <a href="{{ url_for('home') }}">
+                <h1>Flask Dashboard</h1>
+            </a>   
         </header>
         <nav>
             <ul>
                 <li><a href="{{ url_for('home') }}">Home</a></li>
                 {% if current_user.is_anonymous %}
                     <li><a href="{{ url_for('login')}}">Login</a></li>
-                    <li><a href="{{ url_for('register') }}">Click to Register!</a></li>>
+                    <li><a href="{{ url_for('register') }}">Click to Register!</a></li>
                 {% else %}
                     <li><a href="{{ url_for('logout')}}">Logout</a></li>
                 {% endif %}
             </ul>
         </nav>
-        {% block content %}{% endblock %}
+        <div class="content">
+            {% block content %}{% endblock %}
+        </div>
         <footer>
             Made by <span class=author>Thibault Hareau</span>
         </footer>
